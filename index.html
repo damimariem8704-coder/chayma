@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Chimou 🎀</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink:#f3a8c3;
+  --pink2:#ffdce9;
+  --pink3:#fff4f8;
+  --hot:#e45e91;
+  --ink:#46363d;
+  --paper:#fffdfb;
+  --line:#efc9d7;
+  --shadow:rgba(133,72,98,.17);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--ink);
+  font-family:"Quicksand",sans-serif;
+  background:
+    radial-gradient(circle at 8% 13%,#ffdce9 0 46px,transparent 47px),
+    radial-gradient(circle at 92% 18%,#ffe7f0 0 72px,transparent 73px),
+    linear-gradient(135deg,#fff9fb,#fcecf3 52%,#fff9fb);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.17;
+  background-image:radial-gradient(#c97999 .7px,transparent .7px);
+  background-size:17px 17px;
+}
+.wrap{
+  width:min(980px,94vw);
+  margin:auto;
+  padding:28px 0 75px;
+}
+.hero{
+  min-height:92vh;
+  display:grid;
+  place-items:center;
+}
+.card,.sheet{
+  width:100%;
+  background:rgba(255,253,251,.91);
+  border:1.5px solid var(--line);
+  border-radius:30px;
+  box-shadow:0 24px 65px var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.card{
+  max-width:780px;
+  margin:auto;
+  padding:62px 25px 42px;
+  text-align:center;
+}
+.tape{
+  position:absolute;
+  top:12px;
+  left:50%;
+  transform:translateX(-50%) rotate(-2deg);
+  width:125px;
+  height:30px;
+  background:#f3b8cecc;
+  z-index:3;
+}
+.doodle{
+  position:absolute;
+  font-size:40px;
+  animation:bob 3s ease-in-out infinite;
+  user-select:none;
+}
+.d1{left:7%;top:14%}
+.d2{right:8%;top:17%;animation-delay:.5s}
+.d3{left:9%;bottom:11%;animation-delay:1s}
+.d4{right:8%;bottom:11%;animation-delay:1.5s}
+@keyframes bob{
+  50%{transform:translateY(-8px) rotate(7deg)}
+}
+.tiny{
+  font:25px "Patrick Hand",cursive;
+  color:#a96882;
+}
+h1{
+  margin:10px 0;
+  font:400 clamp(60px,10vw,105px)/.78 "Patrick Hand",cursive;
+  color:var(--hot);
+  text-shadow:3px 3px #fbd4e1;
+}
+.arabic{
+  direction:rtl;
+  font:28px Georgia,serif;
+  color:#b66a84;
+  margin:22px 0 12px;
+}
+.hint{
+  font:22px "Patrick Hand",cursive;
+  color:#80606d;
+}
+.open,.choice,.giftBtn,.again{
+  border:0;
+  border-radius:999px;
+  cursor:pointer;
+  font:600 16px "Quicksand",sans-serif;
+  transition:.18s ease;
+}
+.open{
+  margin-top:28px;
+  padding:14px 27px;
+  color:white;
+  background:var(--hot);
+  box-shadow:0 8px #c34f79;
+}
+.open:hover,.choice:hover,.giftBtn:hover,.again:hover{transform:translateY(-2px)}
+.open:active{transform:translateY(5px);box-shadow:0 3px #c34f79}
+
+#surprise{display:none;animation:reveal .8s ease}
+@keyframes reveal{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+.sheet{
+  margin-top:25px;
+  padding:34px 25px 42px;
+  text-align:center;
+}
+.sheet:before{
+  content:"♡  ✦  ♡  ✦  ♡";
+  position:absolute;
+  top:9px;
+  left:0;
+  right:0;
+  color:#eda0ba;
+  font:18px "Patrick Hand";
+}
+.headline{
+  margin-top:8px;
+  font:44px "Patrick Hand",cursive;
+  color:var(--hot);
+}
+.date{
+  display:inline-block;
+  margin:10px 0 20px;
+  padding:8px 17px;
+  border-radius:999px;
+  background:#ffe6ef;
+  border:1px dashed #e693af;
+  font:22px "Patrick Hand",cursive;
+  color:#9e5872;
+  transform:rotate(-1deg);
+}
+.message{
+  max-width:750px;
+  margin:auto;
+  font:26px/1.35 "Patrick Hand",cursive;
+}
+.message p{margin:17px 0}
+.message strong{color:#dc5688}
+.stickers{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin:27px 0;
+}
+.sticker{
+  width:78px;
+  height:78px;
+  display:grid;
+  place-items:center;
+  background:white;
+  border-radius:23px;
+  box-shadow:0 8px 20px rgba(120,70,90,.12);
+  font-size:42px;
+}
+.sticker:nth-child(1){transform:rotate(-6deg)}
+.sticker:nth-child(2){transform:rotate(5deg)}
+.sticker:nth-child(3){transform:rotate(-3deg)}
+.sticker:nth-child(4){transform:rotate(6deg)}
+
+.game{
+  margin:38px auto 5px;
+  max-width:680px;
+  padding:28px 20px;
+  background:#fff7fa;
+  border:1.5px dashed #e49ab4;
+  border-radius:25px;
+}
+.gameTitle{
+  font:36px "Patrick Hand",cursive;
+  color:var(--hot);
+  margin:0 0 5px;
+}
+.gameSub{
+  font:21px "Patrick Hand",cursive;
+  color:#82606d;
+  margin:0 0 20px;
+}
+.gift{
+  font-size:88px;
+  cursor:pointer;
+  display:inline-block;
+  animation:giftBob 1.8s ease-in-out infinite;
+  filter:drop-shadow(0 9px 8px rgba(120,70,90,.13));
+  user-select:none;
+}
+@keyframes giftBob{
+  0%,100%{transform:rotate(-4deg) translateY(0)}
+  50%{transform:rotate(4deg) translateY(-9px)}
+}
+.giftBtn{
+  padding:12px 22px;
+  color:white;
+  background:#e45e91;
+  box-shadow:0 5px #c64e79;
+}
+#question{
+  display:none;
+  margin-top:20px;
+  animation:pop .45s ease;
+}
+@keyframes pop{
+  from{opacity:0;transform:scale(.92)}
+  to{opacity:1;transform:scale(1)}
+}
+.question{
+  font:34px "Patrick Hand",cursive;
+  color:#dd5a8a;
+  margin:5px 0 17px;
+}
+.face{
+  font-size:54px;
+  margin-bottom:12px;
+}
+.choices{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.choice{
+  min-width:120px;
+  min-height:48px;
+  padding:11px 20px;
+  background:white;
+  border:1.5px solid #efb5c8;
+  color:#684855;
+  box-shadow:0 5px #f3d6e1;
+}
+#yBtn{
+  position:relative;
+}
+.result{
+  display:none;
+  margin:20px auto 0;
+  max-width:570px;
+  padding:20px;
+  border-radius:20px;
+  background:white;
+  border:1px solid #f0cfdb;
+  font:28px/1.35 "Patrick Hand",cursive;
+  color:#6b4a57;
+}
+.result strong{color:#df588a}
+.final{
+  display:none;
+  margin-top:23px;
+  animation:pop .5s ease;
+}
+.finalTitle{
+  font:38px "Patrick Hand",cursive;
+  color:#e25c8e;
+}
+.confetti{
+  position:fixed;
+  top:-30px;
+  z-index:100;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(112vh) rotate(720deg);opacity:0}
+}
+.signature{
+  margin-top:30px;
+  font:27px "Patrick Hand",cursive;
+  color:#9e5b76;
+}
+.skincare-note{
+  margin:24px auto 4px;
+  max-width:590px;
+  padding:20px 16px 18px;
+  background:linear-gradient(135deg,#fff8fb,#ffe9f2);
+  border:1.5px dashed #e89ab5;
+  border-radius:24px;
+  box-shadow:0 8px 22px rgba(130,75,100,.09);
+  transform:rotate(.7deg);
+  position:relative;
+  overflow:hidden;
+}
+.skincare-bubbles{
+  font-size:19px;
+  letter-spacing:6px;
+  animation:bubbles 2.2s ease-in-out infinite;
+}
+@keyframes bubbles{
+  50%{transform:translateY(-4px)}
+}
+.skincare-title{
+  margin-top:5px;
+  font:20px "Patrick Hand",cursive;
+  color:#b95c7e;
+}
+.skincare-text{
+  margin-top:4px;
+  font:29px "Patrick Hand",cursive;
+  color:#e0578b;
+}
+.skincare-icons{
+  margin-top:7px;
+  font-size:28px;
+}
+.skincare-sub{
+  margin-top:5px;
+  font:17px "Patrick Hand",cursive;
+  color:#8b6875;
+}
+.footer{
+  margin-top:13px;
+  font-size:12px;
+  color:#ae8b98;
+}
+@media(max-width:600px){
+  .card{padding:56px 17px 35px}
+  .sheet{padding:32px 14px 38px}
+  .message{font-size:23px}
+  .headline{font-size:39px}
+  .game{padding:24px 13px}
+  .question{font-size:30px}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <div class="card">
+      <div class="tape"></div>
+
+      <div class="doodle d1">🎀</div>
+      <div class="doodle d2">♡</div>
+      <div class="doodle d3">🎂</div>
+      <div class="doodle d4">🧸</div>
+
+      <div class="tiny">hey Chimou...</div>
+
+      <h1>Happy<br>Birthday!</h1>
+
+      <div class="arabic">عيد ميلاد سعيد يا شيمو ♡</div>
+
+      <div class="hint">someone has something special to tell you 👀</div>
+
+      <button class="open" type="button" onclick="openSurprise()">tap me ♡</button>
+    </div>
+  </section>
+
+  <section id="surprise">
+    <div class="sheet">
+
+      <div class="headline">Happy Birthday Chimou 🎀</div>
+      <div class="date">26 September ♡</div>
+
+      <div class="message">
+
+        <p>
+          Wishing you the happiest birthday and the sweetest year ahead. ♡
+        </p>
+
+        <p>
+          I hope this new year brings you so much happiness,
+          beautiful memories, lots of laughter,
+          and everything your heart wishes for. 💗
+        </p>
+
+        <p>
+          You're one of the funniest, kindest and most genuine
+          people I know, and I'm really lucky to have you in my life. 🥹
+        </p>
+
+        <p><strong>Stop being so funny, seriously. 😭</strong></p>
+
+        <p><strong>Taw nji fisaa bch netfarjou 3al film 🙈</strong></p>
+
+        <div class="stickers">
+          <div class="sticker">🎀</div>
+          <div class="sticker">💗</div>
+          <div class="sticker">🧪</div>
+          <div class="sticker">🎂</div>
+        </div>
+
+        <p><strong>Can't wait for the istid3a2 el eers C&Y 😂</strong></p>
+
+        <p><strong>Hani nhather fi rouhi bch nachtah bil chikchakchouk mteii 💃😂</strong></p>
+
+      </div>
+
+      <div class="game">
+
+        <h2 class="gameTitle">WAIT... 🎁</h2>
+
+        <p class="gameSub">
+          You thought that was everything?<br>
+          One last thing for you 👀
+        </p>
+
+        <div class="gift" id="gift" role="button" tabindex="0" aria-label="Open your gift">🎁</div>
+
+        <br>
+
+        <button class="giftBtn" id="giftBtn" type="button">
+          open your gift 🎀
+        </button>
+
+        <div id="question">
+
+          <div class="face">😏</div>
+
+          <div class="question">
+            Chkoun theb akther? 👀
+          </div>
+
+          <div class="choices">
+            <button class="choice" id="meBtn" type="button">🥰 Ena</button>
+            <button class="choice" id="yBtn" type="button">😏 Y</button>
+          </div>
+
+          <div class="result" id="result"></div>
+
+          <div class="final" id="final">
+            <div class="finalTitle">Lakan 7abit aad HHHHH 😌💅</div>
+            <div class="message">
+              Hay boussa kbira 😘💋
+              <br>
+              Happy birthday, birthday girl 🎀💗
+
+              <div class="skincare-note">
+                <div class="skincare-bubbles">🫧 ✨ 🫧 ✨ 🫧</div>
+                <div class="skincare-title">🎀 IMPORTANT BIRTHDAY REQUEST 🎀</div>
+                <div class="skincare-text">Fi iid miledi hawka asna3li skin care !!!!</div>
+                <div class="skincare-icons">🧴 + 🧖‍♀️ + 🫧 + 💆‍♀️ = 😌✨</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="signature">
+        love you & enjoy your day, birthday girl 🎀
+      </div>
+
+      <div class="footer">
+        made with way too much effort ✦ ♡ ✦
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+function makeConfetti(amount){
+  const emojis=["💗","💕","♡","🎀","✨","🌸","🎂","🧸","💊","🧪","😂"];
+
+  for(let i=0;i<amount;i++){
+    const item=document.createElement("div");
+    item.className="confetti";
+    item.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    item.style.left=Math.random()*100+"vw";
+    item.style.fontSize=(16+Math.random()*15)+"px";
+    item.style.animationDuration=(3+Math.random()*4.5)+"s";
+    item.style.animationDelay=(Math.random()*1.2)+"s";
+    document.body.appendChild(item);
+
+    setTimeout(()=>item.remove(),9000);
+  }
+}
+
+function openSurprise(){
+  document.getElementById("surprise").style.display="block";
+  makeConfetti(75);
+
+  setTimeout(()=>{
+    document.getElementById("surprise").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  },80);
+}
+
+const giftBtn=document.getElementById("giftBtn");
+const gift=document.getElementById("gift");
+const question=document.getElementById("question");
+const meBtn=document.getElementById("meBtn");
+const yBtn=document.getElementById("yBtn");
+const result=document.getElementById("result");
+const final=document.getElementById("final");
+
+function openGift(){
+  gift.textContent="🎁✨";
+  question.style.display="block";
+  giftBtn.textContent="gift opened 😌";
+  giftBtn.disabled=true;
+  giftBtn.style.opacity=".65";
+}
+
+giftBtn.addEventListener("click",openGift);
+gift.addEventListener("click",openGift);
+gift.addEventListener("keydown",function(e){
+  if(e.key==="Enter" || e.key===" ") openGift();
+});
+
+meBtn.addEventListener("click",function(){
+  result.style.display="none";
+  final.style.display="block";
+  makeConfetti(55);
+});
+
+function moveY(){
+  const area=yBtn.parentElement;
+  const maxX=Math.max(0,area.clientWidth-yBtn.offsetWidth-10);
+  const x=Math.random()*maxX;
+  yBtn.style.transform="translateX("+x+"px) rotate("+(Math.random()*12-6)+"deg)";
+}
+
+yBtn.addEventListener("mouseenter",moveY);
+yBtn.addEventListener("click",function(){
+  // Y = wrong answer: make sure the "Ena" reward is completely hidden
+  final.style.display="none";
+  result.style.display="block";
+  result.innerHTML="<strong>nchlh labeeessss 😭😭😭</strong><br>Wrong answer. Try again, I know you can do better.";
+  moveY();
+});
+</script>
+
+</body>
+</html>
